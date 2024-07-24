@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Haven</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background: url('1.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+        }
+
+        header {
+            background-color: #000; /* Black background for header */
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            font-size: 1.1rem;
+        }
+
+        nav a {
+            color: #fff; /* White text color for navigation links */
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #333; /* Darker background color for hover */
+            color: #f5f5f5; /* Light color for text on hover */
+        }
+
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            color: white;
+            position: relative;
+            height: 300px; /* Adjusted height */
+            margin-top: 2rem; /* Add margin to create space below the header */
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin: 0;
+            font-weight: 700;
+            padding: 1rem;
+            border-radius: 5px;
+            background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
+        }
+
+        .book-items {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            padding: 2rem;
+        }
+
+        .book-item {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            width: 300px;
+            text-align: center;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: box-shadow 0.3s, transform 0.3s;
+        }
+
+        .book-item:hover {
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+            transform: translateY(-5px);
+        }
+
+        .book-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .book-item h3 {
+            margin: 0;
+            padding: 1rem;
+            font-size: 1.25rem;
+            background-color: #f5f5f5;
+        }
+
+        .book-item button {
+            padding: 0.75rem 1.5rem;
+            background-color: #000; /* Black background color */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+
+        .book-item button:hover {
+            background-color: #333; /* Darker black for hover effect */
+        }
+
+        .content {
+            padding: 2rem;
+            text-align: center;
+            max-width: 800px;
+            margin: auto;
+            background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent white background */
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .content h2 {
+            margin-bottom: 1rem;
+            font-size: 2rem;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .content p, .content ul {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .content ul {
+            list-style-type: none; /* Remove the default bullet points */
+            padding-left: 0; /* Remove default padding */
+        }
+
+        .content ul li {
+            margin-bottom: 0.5rem; /* Adjust spacing between list items */
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            padding: 2rem;
+            background-color: rgba(255, 255, 255, 0.9); /* Almost white background */
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin: 2rem auto;
+            width: 90%;
+            max-width: 500px;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .contact-form button {
+            padding: 0.75rem 1.5rem;
+            background-color: #000; /* Black background color */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+
+        .contact-form button:hover {
+            background-color: #333; /* Darker black for hover effect */
+        }
+
+        footer {
+            background-color: #000; /* Black background for footer */
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+            box-shadow: 0 -4px 6px rgba(0,0,0,0.1);
+        }
+
+        /* Bold text color adjustment */
+        .bold-text {
+            color: #000; /* Dark black color */
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#books">Books</a>
+            <a href="#locations">Locations</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <h1>WELCOME TO THE BOOK HEAVEN</h1>
+    </section>
+
+    <section class="book-items" id="books">
+        <div class="book-item">
+            <img src="2.jpg" alt="Book Title 1">
+            <h3>Zebra</h3>
+            <button>Buy Now</button>
+        </div>
+        <div class="book-item">
+            <img src="3.jpg" alt="Book Title 2">
+            <h3>The other names of Grief</h3>
+            <button>Buy Now</button>
+        </div>
+        <div class="book-item">
+            <img src="4.jpg" alt="Book Title 3">
+            <h3>Black & White</h3>
+            <button>Buy Now</button>
+        </div>
+    </section>
+
+    <section class="content" id="locations">
+        <h2 class="bold-text">Find Us</h2>
+        <p>We are conveniently located in various parts of the city, making it easy for you to find us and explore our collection. Here are some of our locations:</p>
+        <ul>
+            <li>Main Street - 123</li>
+            <li>Downtown Plaza - 456</li>
+            <li>City Center - 789</li>
+        </ul>
+    </section>
+    <br>
+
+    <section class="content" id="about">
+        <h2 class="bold-text">About Us</h2>
+        <p>Book Haven was established with the vision of providing a wide variety of books to avid readers. Our bookstore offers a cozy and welcoming atmosphere where you can browse through a diverse collection of genres.</p>
+        <p>From bestsellers to hidden gems, our selection is curated to cater to all reading preferences. We also host events and book signings to connect with the literary community and enhance your reading experience.</p>
+        <p>Our knowledgeable staff is always ready to assist you in finding your next great read and ensuring you have a memorable visit.</p>
+    </section>
+    <br>
+
+    <section class="content" id="contact">
+        <h2 class="bold-text">Contact Us</h2>
+        <form class="contact-form">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Book Haven</p>
+    </footer>
+</body>
+</html>
